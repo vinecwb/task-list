@@ -1,4 +1,8 @@
 import { useState } from 'react';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import MainContent from './components/MainContent/MainContent';
+import './App.css';
 import AddTask from './components/AddTask/AddTask';
 import TaskList from './components/TaskList/TaskList';
 
@@ -15,10 +19,14 @@ function App() {
   };
 
   return (
-    <div className='app-container'>
-      <h1>Task List</h1>
-      <AddTask onAddTask={addTask} />
-      <TaskList tasks={tasks} />
+    <div className='app-container'>{}
+      <Header />
+      <MainContent>
+        <h1>Pending</h1>
+        <AddTask onAddTask={addTask} />
+        <TaskList tasks={tasks} />
+      </MainContent>
+      <Footer />
     </div>
   );
 }
